@@ -1,15 +1,15 @@
 package com.it.code.LoggerLot.model;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import javax.persistence.Entity;
+
+import jakarta.persistence.*;
 
 @Entity
-public class PowerBall implements Serializable {
+public class PowerBall {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = false)
+    @Column(name = "id", nullable = false ,updatable = false)
     private Long id;
+
     private String gameNAme;
     private int powerBallCountLast;
     private int powerBallWhite1;
@@ -17,6 +17,14 @@ public class PowerBall implements Serializable {
     private int powerBallWhite3;
     private int powerBallWhite4;
     private int powerBallWhite5;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public PowerBall() {
     }
@@ -32,13 +40,6 @@ public class PowerBall implements Serializable {
         this.powerBallWhite5 = powerBallWhite5;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getGameNAme() {
         return gameNAme;

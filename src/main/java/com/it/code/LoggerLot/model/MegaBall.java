@@ -1,15 +1,15 @@
 package com.it.code.LoggerLot.model;
 
-import javax.persistence.*;
-import java.io.Serializable;
-import javax.persistence.Entity;
+
+import jakarta.persistence.*;
 
 @Entity
-public class MegaBall implements Serializable {
+public class MegaBall {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(nullable = false, updatable = false)
+    @Column(name = "id", nullable = false, updatable = false)
     private Long id;
+
     private String gameNAme;
     private int megaBallCountLast;
     private int megaBallWhite1;
@@ -17,6 +17,14 @@ public class MegaBall implements Serializable {
     private int megaBallWhite3;
     private int megaBallWhite4;
     private int megaBallWhite5;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public MegaBall() {
     }
@@ -30,14 +38,6 @@ public class MegaBall implements Serializable {
         this.megaBallWhite3 = megaBallWhite3;
         this.megaBallWhite4 = megaBallWhite4;
         this.megaBallWhite5 = megaBallWhite5;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getGameNAme() {

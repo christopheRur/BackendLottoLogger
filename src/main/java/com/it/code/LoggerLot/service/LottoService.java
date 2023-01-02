@@ -7,6 +7,7 @@ import com.it.code.LoggerLot.repo.PBall;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -34,6 +35,27 @@ public class LottoService{
         Iterator<MegaBall> ballsIterator=megaLotto().iterator();
 
         MegaBall megaBall=ballsIterator.next();
+
+        Set<Integer> megaSet=new HashSet<>();
+
+        megaSet.add(megaBall.getMegaBallWhite1());
+        megaSet.add(megaBall.getMegaBallWhite2());
+        megaSet.add(megaBall.getMegaBallWhite3());
+        megaSet.add(megaBall.getMegaBallWhite4());
+        megaSet.add(megaBall.getMegaBallWhite5());
+
+        if(megaSet.size()==5) {return mBall.save(megaBall);}
+
+        else {
+        megaSet.add(megaBall.getMegaBallWhite1());
+        megaSet.add(megaBall.getMegaBallWhite2());
+        megaSet.add(megaBall.getMegaBallWhite3());
+        megaSet.add(megaBall.getMegaBallWhite4());
+        megaSet.add(megaBall.getMegaBallWhite5());
+        }
+
+
+
 
         return  mBall.save(megaBall);
 

@@ -17,7 +17,7 @@ public class LoggerLotApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(LoggerLotApplication.class, args);
 		NumberGenerator numb=new NumberGenerator();
-		Iterator<MegaBall> ballsIterator=numb.generateMegaNumber().iterator();
+		Iterator<PowerBall> ballsIterator=numb.generatePowerNumber().iterator();
 		while(ballsIterator.hasNext()) {
 
 		System.out.println("=======================>"+ballsIterator.next());
